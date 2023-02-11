@@ -1,7 +1,7 @@
 import requests
 import json
 import random
-
+import time
 
 # creates translated text
 def owoizer(phrase):
@@ -106,3 +106,16 @@ def get_response(message: str) -> str:
     # the secret word
     if 'rock' in p_message:
         return 'https://tenor.com/view/the-rock-gif-25266750'
+
+    #Fiora's lines
+    if p_message == 'talk to her, shulk.':
+        time.sleep(0.5)
+        return 'Hey, Fiora?'
+        
+    if p_message == 'yes, shulk?':
+        time.sleep(4)
+        return 'Do you like me?'
+    
+    if p_message == 'why yes, silly!':
+        time.sleep(5)
+        return 'https://tenor.com/view/xenoblade-xenoblade1-xenoblade-chronicles-xenoblade-chronicles1-shulk-gif-26143182'

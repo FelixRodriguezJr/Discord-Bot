@@ -1,5 +1,7 @@
 import discord
 import responses
+import os
+from dotenv import load_dotenv
 
 async def send_message(message, user_message, is_private):
     try:
@@ -9,8 +11,10 @@ async def send_message(message, user_message, is_private):
     except Exception as e:
         print(e)
 
+
 def run_discord_bot():
-    TOKEN = 'MTA1MjM2MDgxODYwMTIzNDU0Mw.GfXACi.kBJNHPaJoGyVz0LiGs-LYsM8BWVwIxmoEYBMnc'
+    load_dotenv()
+    TOKEN = os.environ["TOKEN"]
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
